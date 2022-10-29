@@ -1,0 +1,6 @@
+﻿SequencePrompt = Enter the sequence to process: 
+InstructionsPrompt = Enter the sequence of instructions
+ErrorMessage = ERROR: instruction sequence is invalid.
+InvalidSequenceMessage = Invalid numerical sequence.
+InvalidInstructionsMessage = Instructions are invalid for the given sequence.
+OutputMessage = Decoded sequence is:

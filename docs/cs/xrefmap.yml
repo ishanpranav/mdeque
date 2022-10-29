@@ -1,0 +1,444 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: MDeque
+  name: MDeque
+  href: api/MDeque.html
+  commentId: N:MDeque
+  fullName: MDeque
+  nameWithType: MDeque
+- uid: MDeque.Decoder
+  name: Decoder
+  href: api/MDeque.Decoder.html
+  commentId: T:MDeque.Decoder
+  fullName: MDeque.Decoder
+  nameWithType: Decoder
+- uid: MDeque.Decoder.Decode(MDeque.MDeque{System.Int32},System.String)
+  name: Decode(MDeque<Int32>, String)
+  href: api/MDeque.Decoder.html#MDeque_Decoder_Decode_MDeque_MDeque_System_Int32__System_String_
+  commentId: M:MDeque.Decoder.Decode(MDeque.MDeque{System.Int32},System.String)
+  name.vb: Decode(MDeque(Of Int32), String)
+  fullName: MDeque.Decoder.Decode(MDeque.MDeque<System.Int32>, System.String)
+  fullName.vb: MDeque.Decoder.Decode(MDeque.MDeque(Of System.Int32), System.String)
+  nameWithType: Decoder.Decode(MDeque<Int32>, String)
+  nameWithType.vb: Decoder.Decode(MDeque(Of Int32), String)
+- uid: MDeque.Decoder.Decode*
+  name: Decode
+  href: api/MDeque.Decoder.html#MDeque_Decoder_Decode_
+  commentId: Overload:MDeque.Decoder.Decode
+  isSpec: "True"
+  fullName: MDeque.Decoder.Decode
+  nameWithType: Decoder.Decode
+- uid: MDeque.Decoder.IsValid(System.String)
+  name: IsValid(String)
+  href: api/MDeque.Decoder.html#MDeque_Decoder_IsValid_System_String_
+  commentId: M:MDeque.Decoder.IsValid(System.String)
+  fullName: MDeque.Decoder.IsValid(System.String)
+  nameWithType: Decoder.IsValid(String)
+- uid: MDeque.Decoder.IsValid*
+  name: IsValid
+  href: api/MDeque.Decoder.html#MDeque_Decoder_IsValid_
+  commentId: Overload:MDeque.Decoder.IsValid
+  isSpec: "True"
+  fullName: MDeque.Decoder.IsValid
+  nameWithType: Decoder.IsValid
+- uid: MDeque.Decoder.Parse(System.String)
+  name: Parse(String)
+  href: api/MDeque.Decoder.html#MDeque_Decoder_Parse_System_String_
+  commentId: M:MDeque.Decoder.Parse(System.String)
+  fullName: MDeque.Decoder.Parse(System.String)
+  nameWithType: Decoder.Parse(String)
+- uid: MDeque.Decoder.Parse*
+  name: Parse
+  href: api/MDeque.Decoder.html#MDeque_Decoder_Parse_
+  commentId: Overload:MDeque.Decoder.Parse
+  isSpec: "True"
+  fullName: MDeque.Decoder.Parse
+  nameWithType: Decoder.Parse
+- uid: MDeque.MDeque`1
+  name: MDeque<T>
+  href: api/MDeque.MDeque-1.html
+  commentId: T:MDeque.MDeque`1
+  name.vb: MDeque(Of T)
+  fullName: MDeque.MDeque<T>
+  fullName.vb: MDeque.MDeque(Of T)
+  nameWithType: MDeque<T>
+  nameWithType.vb: MDeque(Of T)
+- uid: MDeque.MDeque`1.#ctor
+  name: MDeque()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1__ctor
+  commentId: M:MDeque.MDeque`1.#ctor
+  fullName: MDeque.MDeque<T>.MDeque()
+  fullName.vb: MDeque.MDeque(Of T).MDeque()
+  nameWithType: MDeque<T>.MDeque()
+  nameWithType.vb: MDeque(Of T).MDeque()
+- uid: MDeque.MDeque`1.#ctor*
+  name: MDeque
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1__ctor_
+  commentId: Overload:MDeque.MDeque`1.#ctor
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.MDeque
+  fullName.vb: MDeque.MDeque(Of T).MDeque
+  nameWithType: MDeque<T>.MDeque
+  nameWithType.vb: MDeque(Of T).MDeque
+- uid: MDeque.MDeque`1.AddCenter(`0)
+  name: AddCenter(T)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_AddCenter__0_
+  commentId: M:MDeque.MDeque`1.AddCenter(`0)
+  fullName: MDeque.MDeque<T>.AddCenter(T)
+  fullName.vb: MDeque.MDeque(Of T).AddCenter(T)
+  nameWithType: MDeque<T>.AddCenter(T)
+  nameWithType.vb: MDeque(Of T).AddCenter(T)
+- uid: MDeque.MDeque`1.AddCenter*
+  name: AddCenter
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_AddCenter_
+  commentId: Overload:MDeque.MDeque`1.AddCenter
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.AddCenter
+  fullName.vb: MDeque.MDeque(Of T).AddCenter
+  nameWithType: MDeque<T>.AddCenter
+  nameWithType.vb: MDeque(Of T).AddCenter
+- uid: MDeque.MDeque`1.AddFirst(`0)
+  name: AddFirst(T)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_AddFirst__0_
+  commentId: M:MDeque.MDeque`1.AddFirst(`0)
+  fullName: MDeque.MDeque<T>.AddFirst(T)
+  fullName.vb: MDeque.MDeque(Of T).AddFirst(T)
+  nameWithType: MDeque<T>.AddFirst(T)
+  nameWithType.vb: MDeque(Of T).AddFirst(T)
+- uid: MDeque.MDeque`1.AddFirst*
+  name: AddFirst
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_AddFirst_
+  commentId: Overload:MDeque.MDeque`1.AddFirst
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.AddFirst
+  fullName.vb: MDeque.MDeque(Of T).AddFirst
+  nameWithType: MDeque<T>.AddFirst
+  nameWithType.vb: MDeque(Of T).AddFirst
+- uid: MDeque.MDeque`1.AddLast(`0)
+  name: AddLast(T)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_AddLast__0_
+  commentId: M:MDeque.MDeque`1.AddLast(`0)
+  fullName: MDeque.MDeque<T>.AddLast(T)
+  fullName.vb: MDeque.MDeque(Of T).AddLast(T)
+  nameWithType: MDeque<T>.AddLast(T)
+  nameWithType.vb: MDeque(Of T).AddLast(T)
+- uid: MDeque.MDeque`1.AddLast*
+  name: AddLast
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_AddLast_
+  commentId: Overload:MDeque.MDeque`1.AddLast
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.AddLast
+  fullName.vb: MDeque.MDeque(Of T).AddLast
+  nameWithType: MDeque<T>.AddLast
+  nameWithType.vb: MDeque(Of T).AddLast
+- uid: MDeque.MDeque`1.Clear
+  name: Clear()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Clear
+  commentId: M:MDeque.MDeque`1.Clear
+  fullName: MDeque.MDeque<T>.Clear()
+  fullName.vb: MDeque.MDeque(Of T).Clear()
+  nameWithType: MDeque<T>.Clear()
+  nameWithType.vb: MDeque(Of T).Clear()
+- uid: MDeque.MDeque`1.Clear*
+  name: Clear
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Clear_
+  commentId: Overload:MDeque.MDeque`1.Clear
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.Clear
+  fullName.vb: MDeque.MDeque(Of T).Clear
+  nameWithType: MDeque<T>.Clear
+  nameWithType.vb: MDeque(Of T).Clear
+- uid: MDeque.MDeque`1.Contains(`0)
+  name: Contains(T)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Contains__0_
+  commentId: M:MDeque.MDeque`1.Contains(`0)
+  fullName: MDeque.MDeque<T>.Contains(T)
+  fullName.vb: MDeque.MDeque(Of T).Contains(T)
+  nameWithType: MDeque<T>.Contains(T)
+  nameWithType.vb: MDeque(Of T).Contains(T)
+- uid: MDeque.MDeque`1.Contains*
+  name: Contains
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Contains_
+  commentId: Overload:MDeque.MDeque`1.Contains
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.Contains
+  fullName.vb: MDeque.MDeque(Of T).Contains
+  nameWithType: MDeque<T>.Contains
+  nameWithType.vb: MDeque(Of T).Contains
+- uid: MDeque.MDeque`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(T[], Int32)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_CopyTo__0___System_Int32_
+  commentId: M:MDeque.MDeque`1.CopyTo(`0[],System.Int32)
+  name.vb: CopyTo(T(), Int32)
+  fullName: MDeque.MDeque<T>.CopyTo(T[], System.Int32)
+  fullName.vb: MDeque.MDeque(Of T).CopyTo(T(), System.Int32)
+  nameWithType: MDeque<T>.CopyTo(T[], Int32)
+  nameWithType.vb: MDeque(Of T).CopyTo(T(), Int32)
+- uid: MDeque.MDeque`1.CopyTo(System.Array,System.Int32)
+  name: CopyTo(Array, Int32)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_CopyTo_System_Array_System_Int32_
+  commentId: M:MDeque.MDeque`1.CopyTo(System.Array,System.Int32)
+  fullName: MDeque.MDeque<T>.CopyTo(System.Array, System.Int32)
+  fullName.vb: MDeque.MDeque(Of T).CopyTo(System.Array, System.Int32)
+  nameWithType: MDeque<T>.CopyTo(Array, Int32)
+  nameWithType.vb: MDeque(Of T).CopyTo(Array, Int32)
+- uid: MDeque.MDeque`1.CopyTo*
+  name: CopyTo
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_CopyTo_
+  commentId: Overload:MDeque.MDeque`1.CopyTo
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.CopyTo
+  fullName.vb: MDeque.MDeque(Of T).CopyTo
+  nameWithType: MDeque<T>.CopyTo
+  nameWithType.vb: MDeque(Of T).CopyTo
+- uid: MDeque.MDeque`1.Count
+  name: Count
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Count
+  commentId: P:MDeque.MDeque`1.Count
+  fullName: MDeque.MDeque<T>.Count
+  fullName.vb: MDeque.MDeque(Of T).Count
+  nameWithType: MDeque<T>.Count
+  nameWithType.vb: MDeque(Of T).Count
+- uid: MDeque.MDeque`1.Count*
+  name: Count
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Count_
+  commentId: Overload:MDeque.MDeque`1.Count
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.Count
+  fullName.vb: MDeque.MDeque(Of T).Count
+  nameWithType: MDeque<T>.Count
+  nameWithType.vb: MDeque(Of T).Count
+- uid: MDeque.MDeque`1.GetEnumerator
+  name: GetEnumerator()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_GetEnumerator
+  commentId: M:MDeque.MDeque`1.GetEnumerator
+  fullName: MDeque.MDeque<T>.GetEnumerator()
+  fullName.vb: MDeque.MDeque(Of T).GetEnumerator()
+  nameWithType: MDeque<T>.GetEnumerator()
+  nameWithType.vb: MDeque(Of T).GetEnumerator()
+- uid: MDeque.MDeque`1.GetEnumerator*
+  name: GetEnumerator
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_GetEnumerator_
+  commentId: Overload:MDeque.MDeque`1.GetEnumerator
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.GetEnumerator
+  fullName.vb: MDeque.MDeque(Of T).GetEnumerator
+  nameWithType: MDeque<T>.GetEnumerator
+  nameWithType.vb: MDeque(Of T).GetEnumerator
+- uid: MDeque.MDeque`1.PeekFirst
+  name: PeekFirst()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_PeekFirst
+  commentId: M:MDeque.MDeque`1.PeekFirst
+  fullName: MDeque.MDeque<T>.PeekFirst()
+  fullName.vb: MDeque.MDeque(Of T).PeekFirst()
+  nameWithType: MDeque<T>.PeekFirst()
+  nameWithType.vb: MDeque(Of T).PeekFirst()
+- uid: MDeque.MDeque`1.PeekFirst*
+  name: PeekFirst
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_PeekFirst_
+  commentId: Overload:MDeque.MDeque`1.PeekFirst
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.PeekFirst
+  fullName.vb: MDeque.MDeque(Of T).PeekFirst
+  nameWithType: MDeque<T>.PeekFirst
+  nameWithType.vb: MDeque(Of T).PeekFirst
+- uid: MDeque.MDeque`1.PeekLast
+  name: PeekLast()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_PeekLast
+  commentId: M:MDeque.MDeque`1.PeekLast
+  fullName: MDeque.MDeque<T>.PeekLast()
+  fullName.vb: MDeque.MDeque(Of T).PeekLast()
+  nameWithType: MDeque<T>.PeekLast()
+  nameWithType.vb: MDeque(Of T).PeekLast()
+- uid: MDeque.MDeque`1.PeekLast*
+  name: PeekLast
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_PeekLast_
+  commentId: Overload:MDeque.MDeque`1.PeekLast
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.PeekLast
+  fullName.vb: MDeque.MDeque(Of T).PeekLast
+  nameWithType: MDeque<T>.PeekLast
+  nameWithType.vb: MDeque(Of T).PeekLast
+- uid: MDeque.MDeque`1.PeekMiddle
+  name: PeekMiddle()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_PeekMiddle
+  commentId: M:MDeque.MDeque`1.PeekMiddle
+  fullName: MDeque.MDeque<T>.PeekMiddle()
+  fullName.vb: MDeque.MDeque(Of T).PeekMiddle()
+  nameWithType: MDeque<T>.PeekMiddle()
+  nameWithType.vb: MDeque(Of T).PeekMiddle()
+- uid: MDeque.MDeque`1.PeekMiddle*
+  name: PeekMiddle
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_PeekMiddle_
+  commentId: Overload:MDeque.MDeque`1.PeekMiddle
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.PeekMiddle
+  fullName.vb: MDeque.MDeque(Of T).PeekMiddle
+  nameWithType: MDeque<T>.PeekMiddle
+  nameWithType.vb: MDeque(Of T).PeekMiddle
+- uid: MDeque.MDeque`1.RemoveFirst
+  name: RemoveFirst()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_RemoveFirst
+  commentId: M:MDeque.MDeque`1.RemoveFirst
+  fullName: MDeque.MDeque<T>.RemoveFirst()
+  fullName.vb: MDeque.MDeque(Of T).RemoveFirst()
+  nameWithType: MDeque<T>.RemoveFirst()
+  nameWithType.vb: MDeque(Of T).RemoveFirst()
+- uid: MDeque.MDeque`1.RemoveFirst*
+  name: RemoveFirst
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_RemoveFirst_
+  commentId: Overload:MDeque.MDeque`1.RemoveFirst
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.RemoveFirst
+  fullName.vb: MDeque.MDeque(Of T).RemoveFirst
+  nameWithType: MDeque<T>.RemoveFirst
+  nameWithType.vb: MDeque(Of T).RemoveFirst
+- uid: MDeque.MDeque`1.RemoveLast
+  name: RemoveLast()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_RemoveLast
+  commentId: M:MDeque.MDeque`1.RemoveLast
+  fullName: MDeque.MDeque<T>.RemoveLast()
+  fullName.vb: MDeque.MDeque(Of T).RemoveLast()
+  nameWithType: MDeque<T>.RemoveLast()
+  nameWithType.vb: MDeque(Of T).RemoveLast()
+- uid: MDeque.MDeque`1.RemoveLast*
+  name: RemoveLast
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_RemoveLast_
+  commentId: Overload:MDeque.MDeque`1.RemoveLast
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.RemoveLast
+  fullName.vb: MDeque.MDeque(Of T).RemoveLast
+  nameWithType: MDeque<T>.RemoveLast
+  nameWithType.vb: MDeque(Of T).RemoveLast
+- uid: MDeque.MDeque`1.RemoveMiddle
+  name: RemoveMiddle()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_RemoveMiddle
+  commentId: M:MDeque.MDeque`1.RemoveMiddle
+  fullName: MDeque.MDeque<T>.RemoveMiddle()
+  fullName.vb: MDeque.MDeque(Of T).RemoveMiddle()
+  nameWithType: MDeque<T>.RemoveMiddle()
+  nameWithType.vb: MDeque(Of T).RemoveMiddle()
+- uid: MDeque.MDeque`1.RemoveMiddle*
+  name: RemoveMiddle
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_RemoveMiddle_
+  commentId: Overload:MDeque.MDeque`1.RemoveMiddle
+  isSpec: "True"
+  fullName: MDeque.MDeque<T>.RemoveMiddle
+  fullName.vb: MDeque.MDeque(Of T).RemoveMiddle
+  nameWithType: MDeque<T>.RemoveMiddle
+  nameWithType.vb: MDeque(Of T).RemoveMiddle
+- uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add(`0)
+  name: ICollection<T>.Add(T)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Add__0_
+  commentId: M:MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add(`0)
+  name.vb: System.Collections.Generic.ICollection<T>.Add(T)
+  fullName: MDeque.MDeque<T>.System.Collections.Generic.ICollection<T>.Add(T)
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.Generic.ICollection<T>.Add(T)
+  nameWithType: MDeque<T>.ICollection<T>.Add(T)
+  nameWithType.vb: MDeque(Of T).System.Collections.Generic.ICollection<T>.Add(T)
+- uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add*
+  name: ICollection<T>.Add
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Add_
+  commentId: Overload:MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add
+  isSpec: "True"
+  name.vb: System.Collections.Generic.ICollection<T>.Add
+  fullName: MDeque.MDeque<T>.System.Collections.Generic.ICollection<T>.Add
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.Generic.ICollection<T>.Add
+  nameWithType: MDeque<T>.ICollection<T>.Add
+  nameWithType.vb: MDeque(Of T).System.Collections.Generic.ICollection<T>.Add
+- uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  name: ICollection<T>.IsReadOnly
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__IsReadOnly
+  commentId: P:MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  name.vb: System.Collections.Generic.ICollection<T>.IsReadOnly
+  fullName: MDeque.MDeque<T>.System.Collections.Generic.ICollection<T>.IsReadOnly
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType: MDeque<T>.ICollection<T>.IsReadOnly
+  nameWithType.vb: MDeque(Of T).System.Collections.Generic.ICollection<T>.IsReadOnly
+- uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#IsReadOnly*
+  name: ICollection<T>.IsReadOnly
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__IsReadOnly_
+  commentId: Overload:MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#IsReadOnly
+  isSpec: "True"
+  name.vb: System.Collections.Generic.ICollection<T>.IsReadOnly
+  fullName: MDeque.MDeque<T>.System.Collections.Generic.ICollection<T>.IsReadOnly
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.Generic.ICollection<T>.IsReadOnly
+  nameWithType: MDeque<T>.ICollection<T>.IsReadOnly
+  nameWithType.vb: MDeque(Of T).System.Collections.Generic.ICollection<T>.IsReadOnly
+- uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+  name: ICollection<T>.Remove(T)
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Remove__0_
+  commentId: M:MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Remove(`0)
+  name.vb: System.Collections.Generic.ICollection<T>.Remove(T)
+  fullName: MDeque.MDeque<T>.System.Collections.Generic.ICollection<T>.Remove(T)
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.Generic.ICollection<T>.Remove(T)
+  nameWithType: MDeque<T>.ICollection<T>.Remove(T)
+  nameWithType.vb: MDeque(Of T).System.Collections.Generic.ICollection<T>.Remove(T)
+- uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Remove*
+  name: ICollection<T>.Remove
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Remove_
+  commentId: Overload:MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Remove
+  isSpec: "True"
+  name.vb: System.Collections.Generic.ICollection<T>.Remove
+  fullName: MDeque.MDeque<T>.System.Collections.Generic.ICollection<T>.Remove
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.Generic.ICollection<T>.Remove
+  nameWithType: MDeque<T>.ICollection<T>.Remove
+  nameWithType.vb: MDeque(Of T).System.Collections.Generic.ICollection<T>.Remove
+- uid: MDeque.MDeque`1.System#Collections#ICollection#IsSynchronized
+  name: ICollection.IsSynchronized
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_ICollection_IsSynchronized
+  commentId: P:MDeque.MDeque`1.System#Collections#ICollection#IsSynchronized
+  name.vb: System.Collections.ICollection.IsSynchronized
+  fullName: MDeque.MDeque<T>.System.Collections.ICollection.IsSynchronized
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.ICollection.IsSynchronized
+  nameWithType: MDeque<T>.ICollection.IsSynchronized
+  nameWithType.vb: MDeque(Of T).System.Collections.ICollection.IsSynchronized
+- uid: MDeque.MDeque`1.System#Collections#ICollection#IsSynchronized*
+  name: ICollection.IsSynchronized
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_ICollection_IsSynchronized_
+  commentId: Overload:MDeque.MDeque`1.System#Collections#ICollection#IsSynchronized
+  isSpec: "True"
+  name.vb: System.Collections.ICollection.IsSynchronized
+  fullName: MDeque.MDeque<T>.System.Collections.ICollection.IsSynchronized
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.ICollection.IsSynchronized
+  nameWithType: MDeque<T>.ICollection.IsSynchronized
+  nameWithType.vb: MDeque(Of T).System.Collections.ICollection.IsSynchronized
+- uid: MDeque.MDeque`1.System#Collections#ICollection#SyncRoot
+  name: ICollection.SyncRoot
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_ICollection_SyncRoot
+  commentId: P:MDeque.MDeque`1.System#Collections#ICollection#SyncRoot
+  name.vb: System.Collections.ICollection.SyncRoot
+  fullName: MDeque.MDeque<T>.System.Collections.ICollection.SyncRoot
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.ICollection.SyncRoot
+  nameWithType: MDeque<T>.ICollection.SyncRoot
+  nameWithType.vb: MDeque(Of T).System.Collections.ICollection.SyncRoot
+- uid: MDeque.MDeque`1.System#Collections#ICollection#SyncRoot*
+  name: ICollection.SyncRoot
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_ICollection_SyncRoot_
+  commentId: Overload:MDeque.MDeque`1.System#Collections#ICollection#SyncRoot
+  isSpec: "True"
+  name.vb: System.Collections.ICollection.SyncRoot
+  fullName: MDeque.MDeque<T>.System.Collections.ICollection.SyncRoot
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.ICollection.SyncRoot
+  nameWithType: MDeque<T>.ICollection.SyncRoot
+  nameWithType.vb: MDeque(Of T).System.Collections.ICollection.SyncRoot
+- uid: MDeque.MDeque`1.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:MDeque.MDeque`1.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: MDeque.MDeque<T>.System.Collections.IEnumerable.GetEnumerator()
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: MDeque<T>.IEnumerable.GetEnumerator()
+  nameWithType.vb: MDeque(Of T).System.Collections.IEnumerable.GetEnumerator()
+- uid: MDeque.MDeque`1.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:MDeque.MDeque`1.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: MDeque.MDeque<T>.System.Collections.IEnumerable.GetEnumerator
+  fullName.vb: MDeque.MDeque(Of T).System.Collections.IEnumerable.GetEnumerator
+  nameWithType: MDeque<T>.IEnumerable.GetEnumerator
+  nameWithType.vb: MDeque(Of T).System.Collections.IEnumerable.GetEnumerator
