@@ -22,11 +22,11 @@ namespace MDeque
             }
         }
 
-        private static string? ErrorMessage
+        private static string? InvalidInstructionsMessage
         {
             get
             {
-                return s_resourceManager.GetString(nameof(ErrorMessage));
+                return s_resourceManager.GetString(nameof(InvalidInstructionsMessage));
             }
         }
 
@@ -35,6 +35,14 @@ namespace MDeque
             get
             {
                 return s_resourceManager.GetString(nameof(OutputMessage));
+            }
+        }
+
+        private static string? EmptySequenceMessage
+        {
+            get
+            {
+                return s_resourceManager.GetString(nameof(EmptySequenceMessage));
             }
         }
     }

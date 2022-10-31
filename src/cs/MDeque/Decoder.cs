@@ -30,12 +30,41 @@ namespace MDeque
         /// <summary>
         /// Decode the sequence represented by the <paramref name="list"/> m-deque following the <paramref name="instructions"/>.
         /// </summary>
-        /// <param name="list">The m-deque with sequence to decode.</param>
+        /// <param name="list">The m-deque with the sequence to decode.</param>
         /// <param name="instructions">Instructions to follow to decode the <param name="list"/>.</param>
-        /// <exception cref="InvalidOperationException">the sequence is empty and the next instruction is either 'F' or 'B'.</exception>
+        /// <exception cref="InvalidOperationException">The sequence is empty and the next instruction is either 'F' or 'B'.</exception>
         public static void Decode(MDeque<int> list, string instructions)
         {
+            foreach (char instruction in instructions)
+            {
+                switch (instruction)
+                {
+                    case 'F':
+                        if (list.Count == 0)
+                        {
+                            throw new InvalidOperationException();
+                        }
 
+                        list.RemoveFirst();
+                        break;
+
+                    case 'B':
+                        if (list.Count == 0)
+                        {
+                            throw new InvalidOperationException();
+                        }
+
+                        list.RemoveLast();
+                        break;
+
+                    case 'R':
+                        for (int i = 0; i < list.Count; i++)
+                        {
+                            list.AddFirst(list.RemoveLast());
+                        }
+                        break;
+                }
+            }
         }
 
         /// <summary>
@@ -47,7 +76,6 @@ namespace MDeque
         public static MDeque<int> Parse(string sequence)
         {
             MDeque<int> list = new MDeque<int>();
-
             string[] splitSequence = sequence.Split(separator: ", ");
 
             for (int i = 0; i < splitSequence.Length; i++)
@@ -65,9 +93,9 @@ namespace MDeque
         /// <returns><see langword="true"/> if instructions are valid; otherwise <see langword="false"/>.</returns>
         public static bool IsValid(string instructions)
         {
-            foreach (char c in instructions)
+            foreach (char instruction in instructions)
             {
-                if (c != 'R' && c != 'F' && c != 'B')
+                if (instruction != 'R' && instruction != 'F' && instruction != 'B')
                 {
                     return false;
                 }
