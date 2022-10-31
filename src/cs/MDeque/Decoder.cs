@@ -44,18 +44,24 @@ namespace MDeque
                         {
                             throw new InvalidOperationException();
                         }
+                        else
+                        {
+                            list.RemoveFirst();
 
-                        list.RemoveFirst();
-                        break;
+                            break;
+                        }
 
                     case 'B':
                         if (list.Count == 0)
                         {
                             throw new InvalidOperationException();
                         }
+                        else
+                        {
+                            list.RemoveLast();
 
-                        list.RemoveLast();
-                        break;
+                            break;
+                        }
 
                     case 'R':
                         for (int i = 0; i < list.Count; i++)

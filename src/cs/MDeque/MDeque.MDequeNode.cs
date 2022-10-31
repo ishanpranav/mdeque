@@ -21,10 +21,6 @@ namespace MDeque
                         return _value;
                     }
                 }
-                set
-                {
-                    _value = value;
-                }
             }
 
             public MDequeNode? Next { get; set; }
@@ -32,7 +28,7 @@ namespace MDeque
 
             public MDequeNode(T value)
             {
-                Value = value;
+                _value = value;
             }
 
             public void Invalidate()

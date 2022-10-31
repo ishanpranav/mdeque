@@ -1,4 +1,4 @@
-# MDeque
-This is a pair of MDeque applications implemented in Java and C# for the NYU CSCI 102 Data Structures course.
+# M-deque
+This is a pair of m-deque applications implemented in Java and C# for the NYU CSCI 102 Data Structures course. An m-deque is a double-ended queue which can push, pop, and peek the middle element in constant time. This implementation uses a doubly-linked list.
 ## License
 This repository is licensed with the [MIT](LICENSE.txt) license.
