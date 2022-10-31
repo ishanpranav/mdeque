@@ -80,26 +80,26 @@ public class Decode {
         for (int i = 0; i < instructions.length(); i++) {
             switch (instructions.charAt(i)) {
                 case 'F':
-                    if (list.Count == 0) {
+                    if (list.size() == 0) {
                         throw new NoSuchElementException();
                     } else {
-                        list.RemoveFirst();
+                        list.popFront();
 
                         break;
                     }
 
                 case 'B':
-                    if (list.Count == 0) {
+                    if (list.size() == 0) {
                         throw new NoSuchElementException();
                     } else {
-                        list.RemoveLast();
+                        list.popBack();
 
                         break;
                     }
 
                 case 'R':
-                    for (int j = 0; j < list.Count; j++) {
-                        list.AddFirst(list.RemoveLast());
+                    for (int j = 0; j < list.size(); j++) {
+                        list.pushFront(list.popBack());
                     }
                     break;
             }
@@ -113,9 +113,8 @@ public class Decode {
      * @return mdeque with the same values as the ones listed in the
      *         {@code sequence}
      * @throws IllegalArgumentException when the sequence contains values that
-     *                                  cannot be
-     *                                  converted to a list of integer due to
-     *                                  invalid characters or invalid separators
+     *                                  cannot be converted to a list of integer due
+     *                                  to invalid characters or invalid separators
      */
     public static MDeque<Integer> parseSequence(String sequence) throws IllegalArgumentException {
         MDeque<Integer> list = new MDeque<Integer>();
@@ -152,6 +151,21 @@ public class Decode {
         return isValid(instructions, 0, instructions.length());
     }
 
+    /**
+     * <p>
+     * Recursively determines if a sequence of instructions is valid.
+     * </p>
+     * 
+     * <p>
+     * This method provides the implementation details for the
+     * {@code isValid(String)} method of the public interface.
+     * </p>
+     * 
+     * @param instructions instruction string
+     * @param offset       the zero-based index from which validation begins
+     * @param length       the pre-computed length of the instruction string
+     * @return {@code true} if instructions are valid, {@code false} otherwise
+     */
     private static boolean isValid(String instructions, int offset, int length) {
         if (offset == length) {
             return true;
