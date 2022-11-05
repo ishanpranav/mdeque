@@ -18,6 +18,8 @@ namespace MDeque
     /// <typeparam name="T">The type of elements held in this m-deque</typeparam>
     public partial class MDeque<T> : ICollection, ICollection<T>, IReadOnlyCollection<T>
     {
+        private int _count;
+        private int _version;
         private object? _syncRoot;
         private MDequeNode? _head;
         private MDequeNode? _body;
@@ -81,7 +83,21 @@ namespace MDeque
         }
 
         /// <inheritdoc/>
-        public int Count { get; private set; }
+        public int Count
+        {
+            get
+            {
+                return _count;
+            }
+            set
+            {
+                if (_count != value)
+                {
+                    _count = value;
+                    _version++;
+                }
+            }
+        }
 
         /// <inheritdoc/>
         bool ICollection<T>.IsReadOnly
@@ -491,12 +507,10 @@ namespace MDeque
         }
 
         /// <inheritdoc/>
+        /// <exception cref="InvalidOperationException">The collection was modified.</exception>
         public IEnumerator<T> GetEnumerator()
         {
-            for (MDequeNode? current = _head; current != null; current = current.Next)
-            {
-                yield return current.Value;
-            }
+            return new MDequeEnumerator(this);
         }
 
         /// <inheritdoc/>

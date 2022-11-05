@@ -1,5 +1,6 @@
 package project3;
 
+import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 
 /**
@@ -72,6 +73,8 @@ public class MDeque<E> implements Iterable<E> {
      * @author Ishan Pranav
      */
     private class MDequeIterator implements Iterator<E> {
+        private final int expectedVersion = version;
+
         private MDequeNode current = head;
 
         /** {@inheritDoc} */
@@ -80,21 +83,34 @@ public class MDeque<E> implements Iterable<E> {
             return current != null;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         * 
+         * @throws ConcurrentModificationException if the mdeque has been modified
+         *                                         concurrently with the iteration
+         */
         @Override
         public E next() {
-            final MDequeNode result = current;
+            if (version != expectedVersion) {
+                throw new ConcurrentModificationException();
+            } else {
+                final MDequeNode result = current;
 
-            current = current.next;
+                current = current.next;
 
-            return result.value;
+                return result.value;
+            }
         }
     }
 
     /**
      * Provides a reverse (back-to-front) iterator for the mdeque.
+     * 
+     * @author Ishan Pranav
      */
     private class MDequeReverseIterator implements Iterator<E> {
+        private final int expectedVersion = version;
+
         private MDequeNode current = tail;
 
         /** {@inheritDoc} */
@@ -103,18 +119,28 @@ public class MDeque<E> implements Iterable<E> {
             return current != head;
         }
 
-        /** {@inheritDoc} */
+        /**
+         * {@inheritDoc}
+         * 
+         * @throws ConcurrentModificationException if the mdeque has been modified
+         *                                         concurrently with the iteration
+         */
         @Override
         public E next() {
-            final MDequeNode result = current;
+            if (version != expectedVersion) {
+                throw new ConcurrentModificationException();
+            } else {
+                final MDequeNode result = current;
 
-            current = current.previous;
+                current = current.previous;
 
-            return result.value;
+                return result.value;
+            }
         }
     }
 
     private int count;
+    private int version;
     private MDequeNode head;
     private MDequeNode body;
     private MDequeNode tail;
@@ -180,6 +206,7 @@ public class MDeque<E> implements Iterable<E> {
      */
     private void initialize(MDequeNode node) {
         count = 1;
+        version++;
         head = node;
         body = node;
         tail = node;
@@ -209,6 +236,7 @@ public class MDeque<E> implements Iterable<E> {
                 }
 
                 count++;
+                version++;
             }
         }
     }
@@ -222,6 +250,7 @@ public class MDeque<E> implements Iterable<E> {
      */
     private void addBefore(MDequeNode newNode, MDequeNode existingNode) {
         count++;
+        version++;
         newNode.next = existingNode;
         newNode.previous = existingNode.previous;
         existingNode.previous.next = newNode;
@@ -263,6 +292,7 @@ public class MDeque<E> implements Iterable<E> {
      */
     private void pushBack(MDequeNode node) {
         count++;
+        version++;
         tail.next = node;
         node.previous = tail;
         tail = node;
@@ -315,6 +345,7 @@ public class MDeque<E> implements Iterable<E> {
                 }
 
                 count--;
+                version++;
 
                 removed.invalidate();
 
@@ -349,6 +380,7 @@ public class MDeque<E> implements Iterable<E> {
             }
 
             count--;
+            version++;
 
             removed.invalidate();
 
@@ -379,6 +411,7 @@ public class MDeque<E> implements Iterable<E> {
                 }
 
                 count--;
+                version++;
 
                 removed.invalidate();
 
@@ -418,6 +451,7 @@ public class MDeque<E> implements Iterable<E> {
         tail.invalidate();
 
         count = 0;
+        version++;
         head = null;
         body = null;
         tail = null;
@@ -460,7 +494,8 @@ public class MDeque<E> implements Iterable<E> {
     public String toString() {
         // Implementation restriction: this method must be implemented using recursion
 
-        // The toString() method wraps recursive toString(StringBuilder, Iterator<E>) method
+        // The toString() method wraps recursive toString(StringBuilder, Iterator<E>)
+        // method
 
         final StringBuilder result = new StringBuilder();
         final MDeque<E> copy = new MDeque<E>();

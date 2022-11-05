@@ -11,9 +11,11 @@ namespace MDeque
 #if DEBUG
             string? line;
             MDeque<double?> list = new MDeque<double?>();
+            MDeque<double?> list2 = new MDeque<double?>();
             V8ScriptEngine engine = new V8ScriptEngine();
 
-            engine.AddHostObject(nameof(list), list);
+            engine.AddHostObject("list", list);
+            engine.AddHostObject("list2", list2);
 
             do
             {
@@ -28,9 +30,13 @@ namespace MDeque
                     {
                         Console.WriteLine(engine.Evaluate(line));
                     }
-                    catch (ScriptEngineException ex)
+                    catch (ScriptEngineException scriptEngineException)
                     {
-                        Console.WriteLine(ex.Message);
+                        Console.WriteLine(scriptEngineException.Message);
+                    }
+                    catch (InvalidOperationException invalidOperationException)
+                    {
+                        Console.WriteLine(invalidOperationException.Message);
                     }
                 }
             }
