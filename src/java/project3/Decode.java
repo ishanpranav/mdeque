@@ -20,6 +20,8 @@ import java.util.regex.PatternSyntaxException;
  * the instructions are {@code FRB}, the resulting sequence should be
  * {@code [35, 1, 42, 189]}.
  *
+ * @param <E> the type of elements held in this mdeque
+ * 
  * @author Joanna Klukowska
  * @author Ishan Pranav
  */
