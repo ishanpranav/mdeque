@@ -398,6 +398,24 @@ namespace MDeque
             }
         }
 
+        /// <summary>
+        /// Reverses the order of the elements in this m-deque.
+        /// </summary>
+        public void Reverse()
+        {
+            MDeque<T> items = new MDeque<T>();
+
+            for (T? first = RemoveFirst(); first != null; first = RemoveFirst())
+            {
+                items.AddFirst(first);
+            }
+
+            foreach (T item in items)
+            {
+                AddLast(item);
+            }
+        }
+
         /// <inheritdoc/>
         void ICollection<T>.Add(T item)
         {

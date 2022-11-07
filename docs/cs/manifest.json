@@ -5,23 +5,11 @@
   "files": [
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/MDeque.Decoder.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/MDeque.Decoder.html",
-          "hash": "b5I6iYtdpUp6kb4mRtZP1yl19eZYb8n2vHn8LV3BJSY="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/MDeque.MDeque-1.yml",
       "output": {
         ".html": {
           "relative_path": "api/MDeque.MDeque-1.html",
-          "hash": "Tvp/k0ztcr4asEWu526GVNgrQ651p4/ZYzwdEt+7TSg="
+          "hash": "y3wHp5EPfSL+0cvk+ope2sTv5QdwwjOZQdLqroMixBE="
         }
       },
       "is_incremental": false,
@@ -33,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "api/MDeque.html",
-          "hash": "TUlNKC2eEsn5VY6Jw+mnj/mG5UdGW6eWnO/5q9lJeuo="
+          "hash": "qrRr69w78z7JpbiiSFEjU9ie3GdcnZv7GZhyDD4N+eE="
         }
       },
       "is_incremental": false,
@@ -45,7 +33,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "jSUEsvcw+743V+tMIX+lDLDplezBU7AZgYuhoA1Z/BY="
+          "hash": "0fUCsfqQwlhTQ7x/vvrmzft70d5g1wjE6USCC+B93To="
         }
       },
       "is_incremental": false,
@@ -81,7 +69,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 2,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

@@ -73,11 +73,12 @@ public class Decode {
      * @param list         the mdeque with sequence to decode
      * @param instructions instructions to follow to decode the {@code list}
      * @throws NoSuchElementException when the sequence is empty and the next
-     *                                instruction
-     *                                is either 'F' or 'B'
+     *                                instruction is either 'F' or 'B'
      */
     public static void decode(MDeque<Integer> list, String instructions) throws NoSuchElementException {
-        for (int i = 0; i < instructions.length(); i++) {
+        final int length = instructions.length();
+
+        for (int i = 0; i < length; i++) {
             switch (instructions.charAt(i)) {
                 case 'F':
                     if (list.size() == 0) {
@@ -98,9 +99,18 @@ public class Decode {
                     }
 
                 case 'R':
-                    for (int j = 0; j < list.size(); j++) {
-                        list.pushFront(list.popBack());
+                    MDeque<Integer> items = new MDeque<Integer>();
+        
+                    for (Integer front = list.popFront(); front != null; front = list.popFront())
+                    {
+                        items.pushFront(front);
                     }
+        
+                    for (Integer item : items)
+                    {
+                        list.pushBack(item);
+                    }
+
                     break;
             }
         }
