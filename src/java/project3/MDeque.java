@@ -57,7 +57,7 @@ public class MDeque<E> implements Iterable<E> {
         }
 
         /**
-         * Renders a node unusuable by clears all outstanding references. This method
+         * Renders a node unusuable by clearing all outstanding references. This method
          * marks the node as ready for garbage disposal.
          */
         public void invalidate() {
@@ -116,7 +116,7 @@ public class MDeque<E> implements Iterable<E> {
         /** {@inheritDoc} */
         @Override
         public boolean hasNext() {
-            return current != head;
+            return current != null;
         }
 
         /**
