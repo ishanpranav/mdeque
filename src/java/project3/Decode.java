@@ -76,42 +76,40 @@ public class Decode {
      *                                instruction is either 'F' or 'B'
      */
     public static void decode(MDeque<Integer> list, String instructions) throws NoSuchElementException {
-        final int length = instructions.length();
+        boolean isListForward = true;
 
-        for (int i = 0; i < length; i++) {
-            switch (instructions.charAt(i)) {
-                case 'F':
+        for (int i = 0; i < instructions.length(); i++) {
+            final char instruction = instructions.charAt(i);
+
+            if (instruction == 'R') {
+                isListForward = !isListForward;
+            } else {
+                final boolean isInstructionForward = instruction == 'F';
+
+                if (isInstructionForward || instruction == 'B') {
                     if (list.size() == 0) {
-                        throw new NoSuchElementException();
-                    } else {
+                        throw new NoSuchElementException("Cannot drop from an empty list.");
+                    } else if (isListForward == isInstructionForward) {
                         list.popFront();
-
-                        break;
-                    }
-
-                case 'B':
-                    if (list.size() == 0) {
-                        throw new NoSuchElementException();
                     } else {
                         list.popBack();
-
-                        break;
                     }
+                }
+            }
+        }
 
-                case 'R':
-                    MDeque<Integer> items = new MDeque<Integer>();
-        
-                    for (Integer front = list.popFront(); front != null; front = list.popFront())
-                    {
-                        items.pushFront(front);
-                    }
-        
-                    for (Integer item : items)
-                    {
-                        list.pushBack(item);
-                    }
+        // If the list has been reversed, convert it back to its sequential
+        // representation
 
-                    break;
+        if (!isListForward) {
+            MDeque<Integer> reversedList = new MDeque<Integer>();
+
+            for (Integer front = list.popFront(); front != null; front = list.popFront()) {
+                reversedList.pushFront(front);
+            }
+
+            for (Integer item : reversedList) {
+                list.pushBack(item);
             }
         }
     }
