@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDeque", "src\cs\MDeque\MDe
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MDeque.Documentation", "docs\cs\MDeque.Documentation\MDeque.Documentation.csproj", "{5D015BDA-F2C5-4504-844C-65280E26BD93}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDeque.Tests", "test\cs\MDeque.Tests\MDeque.Tests.csproj", "{BCB04F3B-A839-424D-8369-6579B94F64DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +32,10 @@ Global
 		{5D015BDA-F2C5-4504-844C-65280E26BD93}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D015BDA-F2C5-4504-844C-65280E26BD93}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D015BDA-F2C5-4504-844C-65280E26BD93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB04F3B-A839-424D-8369-6579B94F64DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB04F3B-A839-424D-8369-6579B94F64DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB04F3B-A839-424D-8369-6579B94F64DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB04F3B-A839-424D-8369-6579B94F64DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

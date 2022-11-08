@@ -28,14 +28,15 @@ namespace MDeque
         /// <summary>
         /// Gets the first element of this m-deque.
         /// </summary>
-        /// <value>The front this m-deque, or <see langword="null"/> if this m-deque is empty.</value>
-        public T? First
+        /// <value>The front of this m-deque.</value>
+        /// <exception cref="InvalidOperationException">The m-deque is empty.</exception>
+        public T First
         {
             get
             {
                 if (_head == null)
                 {
-                    return default;
+                    throw new InvalidOperationException();
                 }
                 else
                 {
@@ -47,14 +48,15 @@ namespace MDeque
         /// <summary>
         /// Gets the middle element of this m-deque.
         /// </summary>
-        /// <value>The middle of this m-deque, or <see langword="null"/> if this m-deque is empty.</value>
-        public T? Center
+        /// <value>The center of this m-deque.</value>
+        /// <exception cref="InvalidOperationException">The m-deque is empty.</exception>
+        public T Center
         {
             get
             {
                 if (_body == null)
                 {
-                    return default;
+                    throw new InvalidOperationException();
                 }
                 else
                 {
@@ -66,14 +68,15 @@ namespace MDeque
         /// <summary>
         /// Gets the last element of this m-deque.
         /// </summary>
-        /// <value>The back this m-deque, or <see langword="null"/> if this m-deque is empty.</value>
-        public T? Last
+        /// <value>The back of this m-deque.</value>
+        /// <exception cref="InvalidOperationException">The m-deque is empty.</exception>
+        public T Last
         {
             get
             {
                 if (_tail == null)
                 {
-                    return default;
+                    throw new InvalidOperationException();
                 }
                 else
                 {
@@ -149,36 +152,28 @@ namespace MDeque
         /// Inserts the specified item at the front of this m-deque.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// <exception cref="ArgumentException"><paramref name="item"/> is <see langword="null"/>.</exception>
         public void AddFirst(T item)
         {
-            if (item == null)
+            MDequeNode node = new MDequeNode(item);
+
+            if (_head == null)
             {
-                throw new ArgumentNullException(nameof(item));
+                Initialize(node);
             }
             else
             {
-                MDequeNode node = new MDequeNode(item);
+                Contract.Assert(_body != null);
 
-                if (_head == null)
+                node.Next = _head;
+                _head.Previous = node;
+                _head = node;
+
+                if (Count % 2 == 0)
                 {
-                    Initialize(node);
+                    _body = _body.Previous;
                 }
-                else
-                {
-                    Contract.Assert(_body != null);
 
-                    node.Next = _head;
-                    _head.Previous = node;
-                    _head = node;
-
-                    if (Count % 2 == 0)
-                    {
-                        _body = _body.Previous;
-                    }
-
-                    Count++;
-                }
+                Count++;
             }
         }
 
@@ -198,43 +193,35 @@ namespace MDeque
         /// Inserts the specified item in the middle of this m-deque.
         /// </summary>
         /// <param name="item">The item.</param>
-        /// <exception cref="ArgumentException"><paramref name="item"/> is <see langword="null"/>.</exception>
         public void AddCenter(T item)
         {
-            if (item == null)
+            MDequeNode node = new MDequeNode(item);
+
+            if (_body == null)
             {
-                throw new ArgumentNullException(nameof(item));
+                Initialize(node);
             }
             else
             {
-                MDequeNode node = new MDequeNode(item);
-
-                if (_body == null)
+                if (Count % 2 == 0)
                 {
-                    Initialize(node);
+                    AddBefore(node, _body);
                 }
                 else
                 {
-                    if (Count % 2 == 0)
+                    MDequeNode? existingNode = _body.Next;
+
+                    if (existingNode == null)
                     {
-                        AddBefore(node, _body);
+                        AddLast(node);
                     }
                     else
                     {
-                        MDequeNode? existingNode = _body.Next;
-
-                        if (existingNode == null)
-                        {
-                            AddLast(node);
-                        }
-                        else
-                        {
-                            AddBefore(node, existingNode);
-                        }
+                        AddBefore(node, existingNode);
                     }
-
-                    _body = node;
                 }
+
+                _body = node;
             }
         }
 
@@ -255,28 +242,21 @@ namespace MDeque
         /// <exception cref="ArgumentException"><paramref name="item"/> is <see langword="null"/>.</exception>
         public void AddLast(T item)
         {
-            if (item == null)
+            MDequeNode node = new MDequeNode(item);
+
+            if (_tail == null)
             {
-                throw new ArgumentNullException(nameof(item));
+                Initialize(node);
             }
             else
             {
-                MDequeNode node = new MDequeNode(item);
+                Contract.Assert(_body != null);
 
-                if (_tail == null)
+                AddLast(node);
+
+                if (Count % 2 == 0)
                 {
-                    Initialize(node);
-                }
-                else
-                {
-                    Contract.Assert(_body != null);
-
-                    AddLast(node);
-
-                    if (Count % 2 == 0)
-                    {
-                        _body = _body.Next;
-                    }
+                    _body = _body.Next;
                 }
             }
         }
@@ -284,12 +264,13 @@ namespace MDeque
         /// <summary>
         /// Retrieves and removes the first element of this m-deque.
         /// </summary>
-        /// <returns>The front this m-deque, or <see langword="null"/> if this m-deque is empty.</returns>
-        public T? RemoveFirst()
+        /// <value>The front of this m-deque.</value>
+        /// <exception cref="InvalidOperationException">The m-deque is empty.</exception>
+        public T RemoveFirst()
         {
             if (_head == null)
             {
-                return default;
+                throw new InvalidOperationException();
             }
             else if (_head.Next == null)
             {
@@ -321,12 +302,13 @@ namespace MDeque
         /// <summary>
         /// Retrieves and removes the middle element of this m-deque.
         /// </summary>
-        /// <returns>The middle of this m-deque, or <see langword="null"/> if this m-deque is empty.</returns>
-        public T? RemoveCenter()
+        /// <value>The center of this m-deque.</value>
+        /// <exception cref="InvalidOperationException">The m-deque is empty.</exception>
+        public T RemoveCenter()
         {
             if (_body == null)
             {
-                return default;
+                throw new InvalidOperationException();
             }
             else if (_body.Previous == null)
             {
@@ -364,12 +346,13 @@ namespace MDeque
         /// <summary>
         /// Retrieves and removes the last element of this m-deque.
         /// </summary>
-        /// <returns>The back this m-deque, or <see langword="null"/> if this m-deque is empty.</returns>
-        public T? RemoveLast()
+        /// <value>The back this m-deque.</value>
+        /// <exception cref="InvalidOperationException">The m-deque is empty.</exception>
+        public T RemoveLast()
         {
             if (_tail == null)
             {
-                return default;
+                throw new InvalidOperationException();
             }
             else if (_tail.Previous == null)
             {
@@ -395,24 +378,6 @@ namespace MDeque
                 removed.Invalidate();
 
                 return result;
-            }
-        }
-
-        /// <summary>
-        /// Reverses the order of the elements in this m-deque.
-        /// </summary>
-        public void Reverse()
-        {
-            MDeque<T> items = new MDeque<T>();
-
-            for (T? first = RemoveFirst(); first != null; first = RemoveFirst())
-            {
-                items.AddFirst(first);
-            }
-
-            foreach (T item in items)
-            {
-                AddLast(item);
             }
         }
 

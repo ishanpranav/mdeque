@@ -272,23 +272,6 @@ references:
   fullName.vb: MDeque.MDeque(Of T).RemoveLast
   nameWithType: MDeque<T>.RemoveLast
   nameWithType.vb: MDeque(Of T).RemoveLast
-- uid: MDeque.MDeque`1.Reverse
-  name: Reverse()
-  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Reverse
-  commentId: M:MDeque.MDeque`1.Reverse
-  fullName: MDeque.MDeque<T>.Reverse()
-  fullName.vb: MDeque.MDeque(Of T).Reverse()
-  nameWithType: MDeque<T>.Reverse()
-  nameWithType.vb: MDeque(Of T).Reverse()
-- uid: MDeque.MDeque`1.Reverse*
-  name: Reverse
-  href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_Reverse_
-  commentId: Overload:MDeque.MDeque`1.Reverse
-  isSpec: "True"
-  fullName: MDeque.MDeque<T>.Reverse
-  fullName.vb: MDeque.MDeque(Of T).Reverse
-  nameWithType: MDeque<T>.Reverse
-  nameWithType.vb: MDeque(Of T).Reverse
 - uid: MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add(`0)
   name: ICollection<T>.Add(T)
   href: api/MDeque.MDeque-1.html#MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Add__0_

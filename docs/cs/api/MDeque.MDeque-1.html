@@ -144,7 +144,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1__ctor.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L137">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L140">View Source</a>
   </span>
   <a id="MDeque_MDeque_1__ctor_" data-uid="MDeque.MDeque`1.#ctor*"></a>
   <h4 id="MDeque_MDeque_1__ctor" data-uid="MDeque.MDeque`1.#ctor">MDeque()</h4>
@@ -162,7 +162,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_Center.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.Center%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L51">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L53">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_Center_" data-uid="MDeque.MDeque`1.Center*"></a>
   <h4 id="MDeque_MDeque_1_Center" data-uid="MDeque.MDeque`1.Center">Center</h4>
@@ -184,7 +184,23 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The middle of this m-deque, or <span class="xref">null</span> if this m-deque is empty.</p>
+        <td><p>The center of this m-deque.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The m-deque is empty.</p>
 </td>
       </tr>
     </tbody>
@@ -194,7 +210,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_Count.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.Count%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L86">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L89">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_Count_" data-uid="MDeque.MDeque`1.Count*"></a>
   <h4 id="MDeque_MDeque_1_Count" data-uid="MDeque.MDeque`1.Count">Count</h4>
@@ -224,7 +240,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_First.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.First%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L32">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L33">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_First_" data-uid="MDeque.MDeque`1.First*"></a>
   <h4 id="MDeque_MDeque_1_First" data-uid="MDeque.MDeque`1.First">First</h4>
@@ -246,7 +262,23 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The front this m-deque, or <span class="xref">null</span> if this m-deque is empty.</p>
+        <td><p>The front of this m-deque.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The m-deque is empty.</p>
 </td>
       </tr>
     </tbody>
@@ -256,7 +288,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_Last.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.Last%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L70">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L73">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_Last_" data-uid="MDeque.MDeque`1.Last*"></a>
   <h4 id="MDeque_MDeque_1_Last" data-uid="MDeque.MDeque`1.Last">Last</h4>
@@ -278,7 +310,23 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The back this m-deque, or <span class="xref">null</span> if this m-deque is empty.</p>
+        <td><p>The back of this m-deque.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The m-deque is empty.</p>
 </td>
       </tr>
     </tbody>
@@ -290,7 +338,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_AddCenter__0_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.AddCenter(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L202">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L196">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_AddCenter_" data-uid="MDeque.MDeque`1.AddCenter*"></a>
   <h4 id="MDeque_MDeque_1_AddCenter__0_" data-uid="MDeque.MDeque`1.AddCenter(`0)">AddCenter(T)</h4>
@@ -319,28 +367,12 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">item</code> is <span class="xref">null</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_AddFirst__0_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.AddFirst(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L153">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L155">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_AddFirst_" data-uid="MDeque.MDeque`1.AddFirst*"></a>
   <h4 id="MDeque_MDeque_1_AddFirst__0_" data-uid="MDeque.MDeque`1.AddFirst(`0)">AddFirst(T)</h4>
@@ -369,28 +401,12 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.ArgumentException</span></td>
-        <td><p><code data-dev-comment-type="paramref" class="paramref">item</code> is <span class="xref">null</span>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_AddLast__0_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.AddLast(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L256">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L243">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_AddLast_" data-uid="MDeque.MDeque`1.AddLast*"></a>
   <h4 id="MDeque_MDeque_1_AddLast__0_" data-uid="MDeque.MDeque`1.AddLast(`0)">AddLast(T)</h4>
@@ -440,7 +456,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_Clear.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.Clear%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L447">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L412">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_Clear_" data-uid="MDeque.MDeque`1.Clear*"></a>
   <h4 id="MDeque_MDeque_1_Clear" data-uid="MDeque.MDeque`1.Clear">Clear()</h4>
@@ -455,7 +471,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_Contains__0_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.Contains(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L467">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L432">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_Contains_" data-uid="MDeque.MDeque`1.Contains*"></a>
   <h4 id="MDeque_MDeque_1_Contains__0_" data-uid="MDeque.MDeque`1.Contains(`0)">Contains(T)</h4>
@@ -502,7 +518,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_CopyTo__0___System_Int32_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.CopyTo(%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L488">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L453">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_CopyTo_" data-uid="MDeque.MDeque`1.CopyTo*"></a>
   <h4 id="MDeque_MDeque_1_CopyTo__0___System_Int32_" data-uid="MDeque.MDeque`1.CopyTo(`0[],System.Int32)">CopyTo(T[], Int32)</h4>
@@ -539,7 +555,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_GetEnumerator.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L529">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L494">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_GetEnumerator_" data-uid="MDeque.MDeque`1.GetEnumerator*"></a>
   <h4 id="MDeque_MDeque_1_GetEnumerator" data-uid="MDeque.MDeque`1.GetEnumerator">GetEnumerator()</h4>
@@ -585,7 +601,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_RemoveCenter.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.RemoveCenter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L325">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L307">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_RemoveCenter_" data-uid="MDeque.MDeque`1.RemoveCenter*"></a>
   <h4 id="MDeque_MDeque_1_RemoveCenter" data-uid="MDeque.MDeque`1.RemoveCenter">RemoveCenter()</h4>
@@ -607,7 +623,23 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The middle of this m-deque, or <span class="xref">null</span> if this m-deque is empty.</p>
+        <td><p>The center of this m-deque.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The m-deque is empty.</p>
 </td>
       </tr>
     </tbody>
@@ -617,7 +649,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_RemoveFirst.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.RemoveFirst%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L288">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L269">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_RemoveFirst_" data-uid="MDeque.MDeque`1.RemoveFirst*"></a>
   <h4 id="MDeque_MDeque_1_RemoveFirst" data-uid="MDeque.MDeque`1.RemoveFirst">RemoveFirst()</h4>
@@ -639,7 +671,23 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The front this m-deque, or <span class="xref">null</span> if this m-deque is empty.</p>
+        <td><p>The front of this m-deque.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The m-deque is empty.</p>
 </td>
       </tr>
     </tbody>
@@ -649,7 +697,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_RemoveLast.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.RemoveLast%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L368">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L351">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_RemoveLast_" data-uid="MDeque.MDeque`1.RemoveLast*"></a>
   <h4 id="MDeque_MDeque_1_RemoveLast" data-uid="MDeque.MDeque`1.RemoveLast">RemoveLast()</h4>
@@ -671,33 +719,33 @@
     <tbody>
       <tr>
         <td><span class="xref">T</span></td>
-        <td><p>The back this m-deque, or <span class="xref">null</span> if this m-deque is empty.</p>
+        <td><p>The back this m-deque.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.InvalidOperationException</span></td>
+        <td><p>The m-deque is empty.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_Reverse.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.Reverse%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L404">View Source</a>
-  </span>
-  <a id="MDeque_MDeque_1_Reverse_" data-uid="MDeque.MDeque`1.Reverse*"></a>
-  <h4 id="MDeque_MDeque_1_Reverse" data-uid="MDeque.MDeque`1.Reverse">Reverse()</h4>
-  <div class="markdown level1 summary"><p>Reverses the order of the elements in this m-deque.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Reverse()</code></pre>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_ToString.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.ToString%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L591">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L556">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_ToString_" data-uid="MDeque.MDeque`1.ToString*"></a>
   <h4 id="MDeque_MDeque_1_ToString" data-uid="MDeque.MDeque`1.ToString">ToString()</h4>
@@ -731,7 +779,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Add__0_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23Generic%23ICollection%7BT%7D%23Add(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L420">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L385">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Add_" data-uid="MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Add__0_" data-uid="MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Add(`0)">ICollection&lt;T&gt;.Add(T)</h4>
@@ -763,7 +811,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_Generic_ICollection_T__IsReadOnly.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23Generic%23ICollection%7BT%7D%23IsReadOnly%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L103">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L106">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_Generic_ICollection_T__IsReadOnly_" data-uid="MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#IsReadOnly*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_Generic_ICollection_T__IsReadOnly" data-uid="MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#IsReadOnly">ICollection&lt;T&gt;.IsReadOnly</h4>
@@ -793,7 +841,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Remove__0_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23Generic%23ICollection%7BT%7D%23Remove(%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L541">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L506">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Remove_" data-uid="MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Remove*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_Generic_ICollection_T__Remove__0_" data-uid="MDeque.MDeque`1.System#Collections#Generic#ICollection{T}#Remove(`0)">ICollection&lt;T&gt;.Remove(T)</h4>
@@ -840,7 +888,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_ICollection_CopyTo_System_Array_System_Int32_.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23ICollection%23CopyTo(System.Array%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L508">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L473">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_ICollection_CopyTo_" data-uid="MDeque.MDeque`1.System#Collections#ICollection#CopyTo*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_ICollection_CopyTo_System_Array_System_Int32_" data-uid="MDeque.MDeque`1.System#Collections#ICollection#CopyTo(System.Array,System.Int32)">ICollection.CopyTo(Array, Int32)</h4>
@@ -877,7 +925,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_ICollection_IsSynchronized.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23ICollection%23IsSynchronized%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L112">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L115">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_ICollection_IsSynchronized_" data-uid="MDeque.MDeque`1.System#Collections#ICollection#IsSynchronized*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_ICollection_IsSynchronized" data-uid="MDeque.MDeque`1.System#Collections#ICollection#IsSynchronized">ICollection.IsSynchronized</h4>
@@ -907,7 +955,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_ICollection_SyncRoot.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23ICollection%23SyncRoot%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L121">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L124">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_ICollection_SyncRoot_" data-uid="MDeque.MDeque`1.System#Collections#ICollection#SyncRoot*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_ICollection_SyncRoot" data-uid="MDeque.MDeque`1.System#Collections#ICollection#SyncRoot">ICollection.SyncRoot</h4>
@@ -937,7 +985,7 @@
     <a href="https://github.com/ishanpranav/mdeque/new/main/apiSpec/new?filename=MDeque_MDeque_1_System_Collections_IEnumerable_GetEnumerator.md&amp;value=---%0Auid%3A%20MDeque.MDeque%601.System%23Collections%23IEnumerable%23GetEnumerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L535">View Source</a>
+    <a href="https://github.com/ishanpranav/mdeque/blob/main/src/cs/MDeque/MDeque.cs/#L500">View Source</a>
   </span>
   <a id="MDeque_MDeque_1_System_Collections_IEnumerable_GetEnumerator_" data-uid="MDeque.MDeque`1.System#Collections#IEnumerable#GetEnumerator*"></a>
   <h4 id="MDeque_MDeque_1_System_Collections_IEnumerable_GetEnumerator" data-uid="MDeque.MDeque`1.System#Collections#IEnumerable#GetEnumerator">IEnumerable.GetEnumerator()</h4>
