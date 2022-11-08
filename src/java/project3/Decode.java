@@ -20,8 +20,6 @@ import java.util.regex.PatternSyntaxException;
  * the instructions are {@code FRB}, the resulting sequence should be
  * {@code [35, 1, 42, 189]}.
  *
- * @param <E> the type of elements held in this mdeque
- * 
  * @author Joanna Klukowska
  * @author Ishan Pranav
  */
@@ -78,22 +76,36 @@ public class Decode {
      *                                instruction is either 'F' or 'B'
      */
     public static void decode(MDeque<Integer> list, String instructions) throws NoSuchElementException {
+        // Record the direction of the list
+
         boolean isListForward = true;
 
         for (int i = 0; i < instructions.length(); i++) {
             final char instruction = instructions.charAt(i);
 
             if (instruction == 'R') {
+                // Reverse the list
+                
                 isListForward = !isListForward;
             } else {
-                final boolean isInstructionForward = instruction == 'F';
+                // Record the direction of the user's pop instruction
 
-                if (isInstructionForward || instruction == 'B') {
+                final boolean isInstructionF = instruction == 'F';
+                
+                if (isInstructionF || instruction == 'B') {
                     if (list.size() == 0) {
                         throw new NoSuchElementException("Cannot drop from an empty list.");
-                    } else if (isListForward == isInstructionForward) {
+                    } else if (isListForward == isInstructionF) {
+                        // If the list direction and instruction direction match, then pop the front
+                        // For example, when dropping the front of a forward list or
+                        // when droping the back from a backward list
+
                         list.popFront();
                     } else {
+                        // If the list direction and instruction direction do not match, then pop the back
+                        // For example, when dropping the back of a forward list or
+                        // when dropping the front of a backward list
+
                         list.popBack();
                     }
                 }
@@ -106,13 +118,30 @@ public class Decode {
         if (!isListForward) {
             MDeque<Integer> reversedList = new MDeque<Integer>();
 
+            // list: [1, 2, 3, 4, 5, 6 ...]
+            // reversedList: []
+
             for (Integer front = list.popFront(); front != null; front = list.popFront()) {
+                // list: [4, 5, 6 ...]
+
                 reversedList.pushFront(front);
+                
+                // reversedList: [... 3, 2, 1]
             }
 
-            for (Integer item : reversedList) {
-                list.pushBack(item);
+            // list: []
+            // reversedList: [... 6, 5, 4, 3, 2, 1]
+
+            for (Integer front = reversedList.popFront(); front != null; front = list.popFront()) {
+                // reversedList: [... 3, 2, 1]
+                
+                list.pushBack(front);
+
+                // list: [... 6, 5, 4 ...]
             }
+
+            // list: [... 6, 5, 4, 3, 2, 1 ]
+            // reversedList: []
         }
     }
 
@@ -156,7 +185,8 @@ public class Decode {
     public static boolean isValid(String instructions) {
         // Implementation restriction: this method must be implemented using recursion
 
-        // The isValid(String) method wraps recursive isValid(String, int, int) method
+        // The "boolean isValid(String)" method wraps the recursive
+        // "boolean isValid(String, int, int)" method
 
         return isValid(instructions, 0, instructions.length());
     }
@@ -178,13 +208,22 @@ public class Decode {
      */
     private static boolean isValid(String instructions, int offset, int length) {
         if (offset == length) {
+            // Base case: an empty instruction string is valid
+
             return true;
         } else {
             char instruction = instructions.charAt(offset);
 
             if (instruction == 'R' || instruction == 'F' || instruction == 'B') {
+                // Recursive case: an instruction string whose first character is R,
+                // F, or B is valid if the remainder of its characters form a valid
+                // instruction string
+
                 return isValid(instructions, offset + 1, length);
             } else {
+                // Base case: an instruction string whose first character is neither
+                // R, F, nor B is invalid
+
                 return false;
             }
         }

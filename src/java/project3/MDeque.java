@@ -32,6 +32,8 @@ import java.util.Iterator;
  * {@code [A, B, C, D, E] -- middle element is C, insert at middle would add at index 3
  * (between C and D).}
  * 
+ * @param <E> the type of elements held in this mdeque
+ * 
  * @author Ishan Pranav
  * @author Joanna Klukowska
  */
@@ -58,7 +60,8 @@ public class MDeque<E> implements Iterable<E> {
 
         /**
          * Renders a node unusuable by clearing all outstanding references. This method
-         * marks the node as ready for garbage disposal.
+         * prepares the node garbage disposal by ensuring that it does not maintain
+         * references to client objects (such as its {@code value}).
          */
         public void invalidate() {
             value = null;
@@ -77,14 +80,18 @@ public class MDeque<E> implements Iterable<E> {
 
         private MDequeNode current = head;
 
-        /** {@inheritDoc} */
+        /** 
+         * Returns {@code true} if the iteration has more elements.
+         * 
+         * @return {@code true} if the iteration has more elements.
+         */
         @Override
         public boolean hasNext() {
             return current != null;
         }
 
         /**
-         * {@inheritDoc}
+         * Returns the next element in the iteration.
          * 
          * @throws ConcurrentModificationException if the mdeque has been modified
          *                                         concurrently with the iteration
@@ -92,7 +99,7 @@ public class MDeque<E> implements Iterable<E> {
         @Override
         public E next() {
             if (version != expectedVersion) {
-                throw new ConcurrentModificationException();
+                throw new ConcurrentModificationException("Collection was modified during iteration.");
             } else {
                 final MDequeNode result = current;
 
@@ -113,14 +120,18 @@ public class MDeque<E> implements Iterable<E> {
 
         private MDequeNode current = tail;
 
-        /** {@inheritDoc} */
+        /** 
+         * Returns {@code true} if the iteration has more elements.
+         * 
+         * @return {@code true} if the iteration has more elements.
+         */
         @Override
         public boolean hasNext() {
             return current != null;
         }
 
         /**
-         * {@inheritDoc}
+         * Returns the next element in the iteration.
          * 
          * @throws ConcurrentModificationException if the mdeque has been modified
          *                                         concurrently with the iteration
@@ -128,7 +139,7 @@ public class MDeque<E> implements Iterable<E> {
         @Override
         public E next() {
             if (version != expectedVersion) {
-                throw new ConcurrentModificationException();
+                throw new ConcurrentModificationException("Collection was modified during iteration.");
             } else {
                 final MDequeNode result = current;
 
@@ -194,7 +205,7 @@ public class MDeque<E> implements Iterable<E> {
     }
 
     /**
-     * Initializes a new instance of the {@link MDeque} class.
+     * Creates an empty MDeque object.
      */
     public MDeque() {
     }
@@ -205,11 +216,11 @@ public class MDeque<E> implements Iterable<E> {
      * @param node The initial node.
      */
     private void initialize(MDequeNode node) {
-        count = 1;
-        version++;
         head = node;
         body = node;
         tail = node;
+        count = 1;
+        version++;
     }
 
     /**
@@ -225,13 +236,28 @@ public class MDeque<E> implements Iterable<E> {
             final MDequeNode node = new MDequeNode(item);
 
             if (head == null) {
+                // Create a single-element list
+
                 initialize(node);
             } else {
+                // List:             $[head] ...
+
                 node.next = head;
+
+                // List:  [node] --> $[head] ...
+
                 head.previous = node;
+
+                // List:  [node] <-> $[head] ...
+
                 head = node;
 
+                // List: $[node] <->  [head] ...
+
                 if (count % 2 == 0) {
+                    // When adding to an even-length list, shift the body forward
+                    // to represent the exact center of the now-odd-length list
+    
                     body = body.previous;
                 }
 
@@ -249,12 +275,34 @@ public class MDeque<E> implements Iterable<E> {
      * @param existingNode the existing node, after which the new node is inserted
      */
     private void addBefore(MDequeNode newNode, MDequeNode existingNode) {
+        // List:
+        // ... [existingNode.previous] <-> [existingNode] <-> [existingNode.next] ...
+
+        newNode.next = existingNode;
+
+        // Lists:
+        //                                 [newNode] --> [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <---------------> [existingNode] <-> [existingNode.next] ...
+
+        newNode.previous = existingNode.previous;
+
+        // Lists:
+        // ... [existingNode.previous] <-- [newNode] --> [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <---------------> [existingNode] <-> [existingNode.next] ...
+
+        existingNode.previous.next = newNode;
+
+        // Lists:
+        // ... [existingNode.previous] <-> [newNode] --> [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <---------------- [existingNode] <-> [existingNode.next] ...
+
+        existingNode.previous = newNode;
+        
+        // List:
+        // ... [existingNode.previous] <-> [newNode] <-> [existingNode] <-> [existingNode.next] ...
+
         count++;
         version++;
-        newNode.next = existingNode;
-        newNode.previous = existingNode.previous;
-        existingNode.previous.next = newNode;
-        existingNode.previous = newNode;
     }
 
     /**
@@ -270,13 +318,25 @@ public class MDeque<E> implements Iterable<E> {
             final MDequeNode node = new MDequeNode(item);
 
             if (body == null) {
+                // Create a single-element list
+
                 initialize(node);
             } else {
                 if (count % 2 == 0) {
+                    // When adding to an even-length list, add the new center before
+                    // the current body to represent the exact center of the
+                    // now-odd-length list
+
                     addBefore(node, body);
                 } else if (body.next == null) {
+                    // If there is one element and the middle is the tail
+
                     pushBack(node);
                 } else {
+                    // When adding to an odd-length list, add the new center after the
+                    // current body to represent the rough center of the now-even-length
+                    // list
+
                     addBefore(node, body.next);
                 }
 
@@ -291,11 +351,22 @@ public class MDeque<E> implements Iterable<E> {
      * @param node The node.
      */
     private void pushBack(MDequeNode node) {
+        // List: ... [tail]$
+
+        tail.next = node;
+
+        // List: ... [tail]$ -> [node]
+
+        node.previous = tail;
+        
+        // List: ... [tail]$ <-> [node]
+
+        tail = node;
+
+        // List: ... [tail]  <-> [node]$
+
         count++;
         version++;
-        tail.next = node;
-        node.previous = tail;
-        tail = node;
     }
 
     /**
@@ -311,12 +382,17 @@ public class MDeque<E> implements Iterable<E> {
             final MDequeNode node = new MDequeNode(item);
 
             if (tail == null) {
+                // Create a single element list
+                
                 initialize(node);
             } else {
                 pushBack(node);
             }
 
             if (count % 2 == 0) {
+                // When adding to an even-length list, shift the body reference
+                // backward to represent the exact center of the now-odd-length list
+                
                 body = body.next;
             }
         }
@@ -330,27 +406,40 @@ public class MDeque<E> implements Iterable<E> {
     public E popFront() {
         if (head == null) {
             return null;
+        } else if (head.next == null) {
+            // Truncate a single-element list
+
+            return clear();
         } else {
-            if (head.next == null) {
-                return clear();
-            } else {
-                final E result = head.value;
-                final MDequeNode removed = head;
+            final E result = head.value;
+            final MDequeNode removed = head;
 
-                head = head.next;
-                head.previous = null;
+            // List: $[removed] <->  [removed.next] ...
 
-                if (count % 2 == 1) {
-                    body = body.next;
-                }
+            head = head.next;
 
-                count--;
-                version++;
+            // List:  [removed] <-> $[removed.next] ...
 
-                removed.invalidate();
+            head.previous = null;
 
-                return result;
+            // List:  [removed] --> $[removed.next] ...
+
+            if (count % 2 == 1) {
+                // When removing from an odd-length list, shift the body reference
+                // backward to represent the rough center of the now-even-length
+                // list
+
+                body = body.next;
             }
+
+            count--;
+            version++;
+
+            removed.invalidate();
+
+            // List:               $[removed.next] ...
+
+            return result;
         }
     }
 
@@ -361,21 +450,45 @@ public class MDeque<E> implements Iterable<E> {
      */
     public E popMiddle() {
         if (body == null) {
+            // Empty case
+
             return null;
         } else if (body.previous == null) {
+            // If the middle is the head
+
             return popFront();
         } else if (body.next == null) {
+            // If the middle is the tail
+
             return popBack();
         } else {
             final E result = body.value;
             final MDequeNode removed = body;
 
+            // List:
+            // ... [body.previous] <-> [body] <-> [body.next] ...
+
             body.previous.next = body.next;
+            
+            // Lists:
+            // ... [body.previous] <-- [body] <-> [body.next] ...
+            // ... [body.previous] -------------> [body.next] ...
+
             body.next.previous = body.previous;
 
+            // Lists:
+            // ... [body.previous] <-- [body] --> [body.next] ...
+            // ... [body.previous] <------------> [body.next] ...
+
             if (count % 2 == 0) {
+                // When removing from an even-length list, shift the body reference
+                // forward to represent the exact center of the now-odd-length list
+
                 body = body.previous;
             } else {
+                // When removing from an odd-length list, shift the body reference
+                // backward to represent the rough center of the now-even-length list
+
                 body = body.next;
             }
 
@@ -383,6 +496,9 @@ public class MDeque<E> implements Iterable<E> {
             version++;
 
             removed.invalidate();
+
+            // List:
+            // ... [body.previous] <------------> [body.next] ...
 
             return result;
         }
@@ -396,27 +512,39 @@ public class MDeque<E> implements Iterable<E> {
     public E popBack() {
         if (tail == null) {
             return null;
+        } else if (body.previous == null) {
+            // Truncate a single-element list
+
+            return clear();
         } else {
-            if (body.previous == null) {
-                return clear();
-            } else {
-                final E result = tail.value;
-                final MDequeNode removed = tail;
+            final E result = tail.value;
+            final MDequeNode removed = tail;
 
-                tail = tail.previous;
-                tail.next = null;
+            // List: ... [removed.previous]  <-> [removed]$
 
-                if (count % 2 == 0) {
-                    body = body.previous;
-                }
+            tail = tail.previous;
 
-                count--;
-                version++;
+            // List: ... [removed.previous]$ <-> [removed]
 
-                removed.invalidate();
+            tail.next = null;
 
-                return result;
+            // List: ... [removed.previous]$ <-- [removed]
+
+            if (count % 2 == 0) {
+                // When removing from an even-length list, shift the body reference
+                // forward to represent the exact center of the now-odd-length list
+
+                body = body.previous;
             }
+
+            count--;
+            version++;
+
+            removed.invalidate();
+
+            // List: ... [removed.previous]$
+
+            return result;
         }
     }
 
@@ -426,15 +554,11 @@ public class MDeque<E> implements Iterable<E> {
      * </p>
      * 
      * <p>
-     * This method is private because it is as a auxiliary method for other parts of
-     * the public interface.
-     * </p>
-     * 
-     * <p>
      * The method runs in constant time. It should not be used to clear a list with
      * more than three elements since it does not iteratively invalidate all of the
      * nodes. The method guarantees that the first, last, and middle elements are
-     * invalidated and resets the data structure to its initial state.
+     * invalidated and resets the data structure to its initial state, but does not
+     * reset the modification count (version number).
      * </p>
      * 
      * <p>
@@ -450,11 +574,11 @@ public class MDeque<E> implements Iterable<E> {
         body.invalidate();
         tail.invalidate();
 
-        count = 0;
-        version++;
         head = null;
         body = null;
         tail = null;
+        count = 0;
+        version++;
 
         return result;
     }
@@ -494,21 +618,21 @@ public class MDeque<E> implements Iterable<E> {
     public String toString() {
         // Implementation restriction: this method must be implemented using recursion
 
-        // The toString() method wraps recursive toString(StringBuilder, Iterator<E>)
-        // method
+        // The "String toString()" method wraps the recursive
+        // "void toString(StringBuilder, Iterator<E>)" method
 
         final StringBuilder result = new StringBuilder();
-        final MDeque<E> copy = new MDeque<E>();
-
-        for (E item : this) {
-            copy.pushFront(item);
-        }
+        final Iterator<E> iterator = iterator();
 
         result.append('[');
 
-        toString(result, iterator());
+        if (iterator.hasNext()) {
+            toString(result, iterator);
+        }
 
-        return result.toString();
+        return result
+            .append(']')
+            .toString();
     }
 
     /**
@@ -518,16 +642,18 @@ public class MDeque<E> implements Iterable<E> {
      * @param iterator an iterator over the elements of the mdeque
      */
     private void toString(StringBuilder builder, Iterator<E> iterator) {
-        if (iterator.hasNext()) {
-            builder.append(iterator.next());
+        // Append next element
 
-            if (iterator.hasNext()) {
-                builder.append(", ");
-            }
+        builder.append(iterator.next());
+
+        if (iterator.hasNext()) {
+            builder.append(", ");
+
+            // Recursive case: append remainder
 
             toString(builder, iterator);
-        } else {
-            builder.append(']');
         }
+
+        // Base case: terminate
     }
 }
