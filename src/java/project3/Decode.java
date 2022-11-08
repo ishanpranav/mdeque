@@ -132,7 +132,7 @@ public class Decode {
             // list: []
             // reversedList: [... 6, 5, 4, 3, 2, 1]
 
-            for (Integer front = reversedList.popFront(); front != null; front = list.popFront()) {
+            for (Integer front = reversedList.popFront(); front != null; front = reversedList.popFront()) {
                 // reversedList: [... 3, 2, 1]
                 
                 list.pushBack(front);
