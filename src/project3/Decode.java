@@ -29,6 +29,9 @@ public class Decode {
      * Provides the main entry point for the application.
      * 
      * @param args the command-line arguments to the program.
+     * 
+     * @author Joanna Klukowska
+     * 
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -36,7 +39,7 @@ public class Decode {
         System.out.println("Enter the sequence to process: ");
         String sequence = in.nextLine();
 
-        System.out.println("Enter the sequence of instrucitons: ");
+        System.out.println("Enter the sequence of instructions: ");
         String instructions = in.nextLine();
 
         if (!isValid(instructions)) {
@@ -85,13 +88,13 @@ public class Decode {
 
             if (instruction == 'R') {
                 // Reverse the list
-                
+
                 isListForward = !isListForward;
             } else {
                 // Record the direction of the user's pop instruction
 
                 final boolean isInstructionF = instruction == 'F';
-                
+
                 if (isInstructionF || instruction == 'B') {
                     if (list.size() == 0) {
                         throw new NoSuchElementException("Cannot drop from an empty list.");
@@ -102,7 +105,8 @@ public class Decode {
 
                         list.popFront();
                     } else {
-                        // If the list direction and instruction direction do not match, then pop the back
+                        // If the list direction and instruction direction do not match, then pop the
+                        // back
                         // For example, when dropping the back of a forward list or
                         // when dropping the front of a backward list
 
@@ -125,7 +129,7 @@ public class Decode {
                 // list: [4, 5, 6 ...]
 
                 reversedList.pushFront(front);
-                
+
                 // reversedList: [... 3, 2, 1]
             }
 
@@ -134,7 +138,7 @@ public class Decode {
 
             for (Integer front = reversedList.popFront(); front != null; front = reversedList.popFront()) {
                 // reversedList: [... 3, 2, 1]
-                
+
                 list.pushBack(front);
 
                 // list: [... 6, 5, 4 ...]
