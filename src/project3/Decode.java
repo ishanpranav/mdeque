@@ -25,13 +25,14 @@ import java.util.regex.PatternSyntaxException;
  */
 public class Decode {
 
+    /** Initializes a new instance of the {@link Decode} class. */
+    private Decode() {
+    }
+    
     /**
      * Provides the main entry point for the application.
      * 
      * @param args the command-line arguments to the program.
-     * 
-     * @author Joanna Klukowska
-     * 
      */
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
