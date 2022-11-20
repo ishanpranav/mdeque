@@ -2,6 +2,7 @@ package project3;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * <p>
@@ -80,7 +81,7 @@ public class MDeque<E> implements Iterable<E> {
 
         private MDequeNode current = head;
 
-        /** 
+        /**
          * Returns {@code true} if the iteration has more elements.
          * 
          * @return {@code true} if the iteration has more elements.
@@ -95,18 +96,23 @@ public class MDeque<E> implements Iterable<E> {
          * 
          * @throws ConcurrentModificationException if the mdeque has been modified
          *                                         concurrently with the iteration
+         * @throws NoSuchElementException if the iteration has no more elements
          */
         @Override
         public E next() {
             if (version != expectedVersion) {
                 throw new ConcurrentModificationException("Collection was modified during iteration.");
-            } else {
-                final MDequeNode result = current;
-
-                current = current.next;
-
-                return result.value;
             }
+
+            if (current == null) {
+                throw new NoSuchElementException("Collection is empty.");
+            }
+
+            final MDequeNode result = current;
+
+            current = current.next;
+
+            return result.value;
         }
     }
 
@@ -120,7 +126,7 @@ public class MDeque<E> implements Iterable<E> {
 
         private MDequeNode current = tail;
 
-        /** 
+        /**
          * Returns {@code true} if the iteration has more elements.
          * 
          * @return {@code true} if the iteration has more elements.
@@ -135,18 +141,23 @@ public class MDeque<E> implements Iterable<E> {
          * 
          * @throws ConcurrentModificationException if the mdeque has been modified
          *                                         concurrently with the iteration
+         * @throws NoSuchElementException if the iteration has no more elements
          */
         @Override
         public E next() {
             if (version != expectedVersion) {
                 throw new ConcurrentModificationException("Collection was modified during iteration.");
-            } else {
-                final MDequeNode result = current;
-
-                current = current.previous;
-
-                return result.value;
             }
+
+            if (current == null) {
+                throw new NoSuchElementException("Collection is empty.");
+            }
+
+            final MDequeNode result = current;
+
+            current = current.previous;
+
+            return result.value;
         }
     }
 
@@ -240,24 +251,24 @@ public class MDeque<E> implements Iterable<E> {
 
                 initialize(node);
             } else {
-                // List:             $[head] ...
+                // List: $[head] ...
 
                 node.next = head;
 
-                // List:  [node] --> $[head] ...
+                // List: [node] --> $[head] ...
 
                 head.previous = node;
 
-                // List:  [node] <-> $[head] ...
+                // List: [node] <-> $[head] ...
 
                 head = node;
 
-                // List: $[node] <->  [head] ...
+                // List: $[node] <-> [head] ...
 
                 if (count % 2 == 0) {
                     // When adding to an even-length list, shift the body forward
                     // to represent the exact center of the now-odd-length list
-    
+
                     body = body.previous;
                 }
 
@@ -281,25 +292,31 @@ public class MDeque<E> implements Iterable<E> {
         newNode.next = existingNode;
 
         // Lists:
-        //                                 [newNode] --> [existingNode] <-> [existingNode.next] ...
-        // ... [existingNode.previous] <---------------> [existingNode] <-> [existingNode.next] ...
+        // [newNode] --> [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <---------------> [existingNode] <->
+        // [existingNode.next] ...
 
         newNode.previous = existingNode.previous;
 
         // Lists:
-        // ... [existingNode.previous] <-- [newNode] --> [existingNode] <-> [existingNode.next] ...
-        // ... [existingNode.previous] <---------------> [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <-- [newNode] --> [existingNode] <->
+        // [existingNode.next] ...
+        // ... [existingNode.previous] <---------------> [existingNode] <->
+        // [existingNode.next] ...
 
         existingNode.previous.next = newNode;
 
         // Lists:
-        // ... [existingNode.previous] <-> [newNode] --> [existingNode] <-> [existingNode.next] ...
-        // ... [existingNode.previous] <---------------- [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <-> [newNode] --> [existingNode] <->
+        // [existingNode.next] ...
+        // ... [existingNode.previous] <---------------- [existingNode] <->
+        // [existingNode.next] ...
 
         existingNode.previous = newNode;
-        
+
         // List:
-        // ... [existingNode.previous] <-> [newNode] <-> [existingNode] <-> [existingNode.next] ...
+        // ... [existingNode.previous] <-> [newNode] <-> [existingNode] <->
+        // [existingNode.next] ...
 
         count++;
         version++;
@@ -358,12 +375,12 @@ public class MDeque<E> implements Iterable<E> {
         // List: ... [tail]$ -> [node]
 
         node.previous = tail;
-        
+
         // List: ... [tail]$ <-> [node]
 
         tail = node;
 
-        // List: ... [tail]  <-> [node]$
+        // List: ... [tail] <-> [node]$
 
         count++;
         version++;
@@ -383,7 +400,7 @@ public class MDeque<E> implements Iterable<E> {
 
             if (tail == null) {
                 // Create a single element list
-                
+
                 initialize(node);
             } else {
                 pushBack(node);
@@ -392,7 +409,7 @@ public class MDeque<E> implements Iterable<E> {
             if (count % 2 == 0) {
                 // When adding to an even-length list, shift the body reference
                 // backward to represent the exact center of the now-odd-length list
-                
+
                 body = body.next;
             }
         }
@@ -414,15 +431,15 @@ public class MDeque<E> implements Iterable<E> {
             final E result = head.value;
             final MDequeNode removed = head;
 
-            // List: $[removed] <->  [removed.next] ...
+            // List: $[removed] <-> [removed.next] ...
 
             head = head.next;
 
-            // List:  [removed] <-> $[removed.next] ...
+            // List: [removed] <-> $[removed.next] ...
 
             head.previous = null;
 
-            // List:  [removed] --> $[removed.next] ...
+            // List: [removed] --> $[removed.next] ...
 
             if (count % 2 == 1) {
                 // When removing from an odd-length list, shift the body reference
@@ -437,7 +454,7 @@ public class MDeque<E> implements Iterable<E> {
 
             removed.invalidate();
 
-            // List:               $[removed.next] ...
+            // List: $[removed.next] ...
 
             return result;
         }
@@ -469,7 +486,7 @@ public class MDeque<E> implements Iterable<E> {
             // ... [body.previous] <-> [body] <-> [body.next] ...
 
             body.previous.next = body.next;
-            
+
             // Lists:
             // ... [body.previous] <-- [body] <-> [body.next] ...
             // ... [body.previous] -------------> [body.next] ...
@@ -520,7 +537,7 @@ public class MDeque<E> implements Iterable<E> {
             final E result = tail.value;
             final MDequeNode removed = tail;
 
-            // List: ... [removed.previous]  <-> [removed]$
+            // List: ... [removed.previous] <-> [removed]$
 
             tail = tail.previous;
 
@@ -631,8 +648,8 @@ public class MDeque<E> implements Iterable<E> {
         }
 
         return result
-            .append(']')
-            .toString();
+                .append(']')
+                .toString();
     }
 
     /**
