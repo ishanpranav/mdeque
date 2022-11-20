@@ -105,7 +105,7 @@ public class MDeque<E> implements Iterable<E> {
             }
 
             if (current == null) {
-                throw new NoSuchElementException("Collection is empty.");
+                throw new NoSuchElementException("Collection has no more elements.");
             }
 
             final MDequeNode result = current;
