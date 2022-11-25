@@ -197,14 +197,10 @@ public class Decode {
     }
 
     /**
-     * <p>
      * Recursively determines if a sequence of instructions is valid.
-     * </p>
      * 
-     * <p>
      * This method provides the implementation details for the
      * {@code isValid(String)} method of the public interface.
-     * </p>
      * 
      * @param instructions instruction string
      * @param offset       the zero-based index from which validation begins

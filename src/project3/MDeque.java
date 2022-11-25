@@ -5,28 +5,20 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 /**
- * <p>
  * A linear collection that supports element insertion and removal at three
  * points: front, middle and back. The name <em>mdeque</em> is short for "double
  * ended queue" (deque) with <em>m</em> for "middle" and is pronounced
  * "em-deck". MDeque has no fixed limits on the number of elements it contains.
- * </p>
  * 
- * <p>
  * The remove operations all return null values if the mdeque is empty. The
  * structure does not allow null as an element.
- * </p>
  * 
- * <p>
  * All {@code pop...}, {@code push...}, and {@code peek...} operations (from all
  * three points of access) are constant time operations.
- * </p>
  * 
- * <p>
  * The <em>middle</em> position is defined as (size+1)/2 when inserting an
  * element in the <em>middle</em> and as (size/2) when retrieving an element
  * from the <em>middle</em>. The position count is zero based.
- * </p>
  * 
  * {@code [A, B, C, D] -- middle element is C, insert at middle would add at index 2
  * (between B and C).}
@@ -61,7 +53,7 @@ public class MDeque<E> implements Iterable<E> {
 
         /**
          * Renders a node unusuable by clearing all outstanding references. This method
-         * prepares the node garbage disposal by ensuring that it does not maintain
+         * prepares the node for garbage disposal by ensuring that it does not maintain
          * references to client objects (such as its {@code value}).
          */
         public void invalidate() {
@@ -96,7 +88,7 @@ public class MDeque<E> implements Iterable<E> {
          * 
          * @throws ConcurrentModificationException if the mdeque has been modified
          *                                         concurrently with the iteration
-         * @throws NoSuchElementException if the iteration has no more elements
+         * @throws NoSuchElementException          if the iteration has no more elements
          */
         @Override
         public E next() {
@@ -141,7 +133,7 @@ public class MDeque<E> implements Iterable<E> {
          * 
          * @throws ConcurrentModificationException if the mdeque has been modified
          *                                         concurrently with the iteration
-         * @throws NoSuchElementException if the iteration has no more elements
+         * @throws NoSuchElementException          if the iteration has no more elements
          */
         @Override
         public E next() {
@@ -216,17 +208,17 @@ public class MDeque<E> implements Iterable<E> {
     }
 
     /**
-     * Creates an empty MDeque object.
+     * Creates an empty mdeque object.
      */
     public MDeque() {
     }
 
     /**
-     * Initializes the linked list with a single node.
+     * Inserts a node into an empty mdeque.
      * 
      * @param node The initial node.
      */
-    private void initialize(MDequeNode node) {
+    private void pushToEmpty(MDequeNode node) {
         head = node;
         body = node;
         tail = node;
@@ -249,7 +241,7 @@ public class MDeque<E> implements Iterable<E> {
             if (head == null) {
                 // Create a single-element list
 
-                initialize(node);
+                pushToEmpty(node);
             } else {
                 // List: $[head] ...
 
@@ -337,7 +329,7 @@ public class MDeque<E> implements Iterable<E> {
             if (body == null) {
                 // Create a single-element list
 
-                initialize(node);
+                pushToEmpty(node);
             } else {
                 if (count % 2 == 0) {
                     // When adding to an even-length list, add the new center before
@@ -401,7 +393,7 @@ public class MDeque<E> implements Iterable<E> {
             if (tail == null) {
                 // Create a single element list
 
-                initialize(node);
+                pushToEmpty(node);
             } else {
                 pushBack(node);
             }
@@ -566,21 +558,15 @@ public class MDeque<E> implements Iterable<E> {
     }
 
     /**
-     * <p>
      * Truncates the mdeque's linked list and returns the first element.
-     * </p>
      * 
-     * <p>
      * The method runs in constant time. It should not be used to clear a list with
      * more than three elements since it does not iteratively invalidate all of the
      * nodes. The method guarantees that the first, last, and middle elements are
      * invalidated and resets the data structure to its initial state, but does not
      * reset the modification count (version number).
-     * </p>
      * 
-     * <p>
      * Precondition: the linked list contains between 0 and 3 elements, inclusive.
-     * </p>
      * 
      * @return the front of the mdeque before clearing
      */
@@ -636,15 +622,14 @@ public class MDeque<E> implements Iterable<E> {
         // Implementation restriction: this method must be implemented using recursion
 
         // The "String toString()" method wraps the recursive
-        // "void toString(StringBuilder, Iterator<E>)" method
+        // "void toString(StringBuilder, MDequeNode)" method
 
         final StringBuilder result = new StringBuilder();
-        final Iterator<E> iterator = iterator();
 
         result.append('[');
 
-        if (iterator.hasNext()) {
-            toString(result, iterator);
+        if (head != null) {
+            toString(result, head);
         }
 
         return result
@@ -655,22 +640,23 @@ public class MDeque<E> implements Iterable<E> {
     /**
      * Recursively prepares a string representation of this mdeque.
      * 
-     * @param builder  the string builder
-     * @param iterator an iterator over the elements of the mdeque
+     * @param builder the string builder
+     * @param current the current node
      */
-    private void toString(StringBuilder builder, Iterator<E> iterator) {
+    private void toString(StringBuilder builder, MDequeNode current) {
         // Append next element
 
-        builder.append(iterator.next());
+        builder.append(current);
 
-        if (iterator.hasNext()) {
-            builder.append(", ");
+        if (current.next == null) {
+            // Base case: terminate
 
-            // Recursive case: append remainder
-
-            toString(builder, iterator);
+            return;
         }
 
-        // Base case: terminate
+        // Recursive case: append remainder
+
+        builder.append(", ");
+        toString(builder, current.next);
     }
 }
