@@ -23,7 +23,7 @@ import java.util.regex.PatternSyntaxException;
  * @author Joanna Klukowska
  * @author Ishan Pranav
  */
-public class Decode {
+public final class Decode {
 
     /** Initializes a new instance of the {@link Decode} class. */
     private Decode() {
